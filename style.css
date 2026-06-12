@@ -76,6 +76,11 @@ nav a:hover{
 color:var(--terracotta);
 }
 
+nav a.active{
+color:var(--terracotta);
+font-weight:600;
+}
+
 /* Hero */
 
 .hero{
@@ -354,5 +359,29 @@ color:#f5f5f5;
 
 .dark h2,
 .dark .hero h1{
+color:#DCCAF4;
+}
+
+.dark{
+background:#2f2c35;
+color:#f5f5f5;
+}
+
+.dark nav{
+background:rgba(40,40,40,.8);
+}
+
+.dark .paper,
+.dark .value,
+.dark .item,
+.dark .card,
+.dark .contact a,
+.dark .hero-card{
+background:#3a3742;
+color:#f5f5f5;
+}
+
+.dark h1,
+.dark h2{
 color:#DCCAF4;
 }
