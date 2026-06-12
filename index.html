@@ -319,6 +319,16 @@ Made with 🤍 by Ira
   <source src="assets/music_unlimited.mp3" type="audio/mpeg">
 </audio>
 
+<script>
+document.addEventListener("click", () => {
+  const music = document.getElementById("bgMusic");
+
+  if (music.paused) {
+    music.play().catch(err => console.log(err));
+  }
+}, { once: true });
+</script>
+
 <script src="script.js"></script>
 
 </body>
