@@ -313,13 +313,17 @@ Email
 Made with 🤍 by Ira
 </footer>
 
-<h1 style="color:red;text-align:center;">
-TEST AUDIO 123
-</h1>
-
-<audio controls>
+<audio id="bgMusic" loop>
   <source src="assets/music_unlimited.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+document.addEventListener("click", () => {
+  music.play();
+}, { once: true });
+</script>
 
 <script src="script.js"></script>
 
