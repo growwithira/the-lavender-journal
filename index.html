@@ -92,24 +92,6 @@
 
 <footer>Made with 🤍 by Ira</footer>
 
-<script>
-const text="Software Engineering Learner • Building meaningful things one step at a time.";
-let i=0;
-function type(){
- if(i<text.length){
-  document.getElementById("typing").textContent+=text.charAt(i);
-  i++; setTimeout(type,45);
- }
-}
-type();
-
-const obs=new IntersectionObserver(entries=>{
- entries.forEach(e=>{
-  if(e.isIntersecting) e.target.classList.add("show");
- });
-});
-document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
-</script>
 <script src="script.js"></script>
 </body>
 </html>
