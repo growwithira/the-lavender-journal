@@ -224,8 +224,10 @@ alt="Learning Dashboard"
 Monitor goals, learning progress and productivity in a simple dashboard experience.
 </p>
 
-</div>
+<br>
 <h6><em><u>Source : pictures by Pinterest</u></em></h6>
+
+</div>
 
 </div>
 
@@ -312,6 +314,18 @@ Email
 <footer>
 Made with 🤍 by Ira
 </footer>
+
+<audio id="bgMusic" loop>
+  <source src="assets/music_unlimited.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+document.addEventListener("click", () => {
+  music.play();
+}, { once: true });
+</script>
 
 <audio id="bgMusic" loop>
   <source src="assets/music_unlimited.mp3" type="audio/mpeg">
