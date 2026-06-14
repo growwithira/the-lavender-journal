@@ -329,6 +329,50 @@ document.addEventListener("click", function () {
 }, { once: true });
 </script>
 
+
+<div id="volumeControl">
+  💜
+  <input
+    type="range"
+    id="volumeSlider"
+    min="0"
+    max="1"
+    step="0.01"
+    value="0.5">
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="assets/music_unlimited.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+const volumeControl = document.getElementById("volumeControl");
+const volumeSlider = document.getElementById("volumeSlider");
+
+music.volume = 0.5;
+
+volumeSlider.addEventListener("input", () => {
+  music.volume = volumeSlider.value;
+});
+
+document.addEventListener("click", function () {
+
+  if (music.paused) {
+
+    music.play();
+
+    volumeControl.classList.add("show");
+
+    setTimeout(() => {
+      volumeControl.classList.remove("show");
+    }, 7000);
+
+  }
+
+}, { once: true });
+</script>
+
 <script src="script.js"></script>
 
 </body>
