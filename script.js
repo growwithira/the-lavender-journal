@@ -304,3 +304,111 @@ if (footer) {
     `Made with 🤍 by Ira • ${new Date().getFullYear()}`;
 
 }
+
+/* ==========================
+   BACKGROUND MUSIC
+========================== */
+
+const music = document.getElementById("bgMusic");
+const volumeControl = document.getElementById("volumeControl");
+const volumeSlider = document.getElementById("volumeSlider");
+
+if (music && volumeSlider) {
+
+  let targetVolume = 0.5;
+
+  music.volume = 0;
+
+  volumeSlider.value = targetVolume;
+
+  volumeSlider.addEventListener("input", () => {
+
+    targetVolume = parseFloat(volumeSlider.value);
+
+    music.volume = targetVolume;
+
+  });
+
+  function fadeInMusic() {
+
+    music.volume = 0;
+
+    music.play();
+
+    let volume = 0;
+
+    const fade = setInterval(() => {
+
+      if (volume < targetVolume) {
+
+        volume += targetVolume / 30;
+
+        music.volume = Math.min(volume, targetVolume);
+
+      } else {
+
+        clearInterval(fade);
+
+      }
+
+    }, 100);
+
+  }
+
+  function fadeOutMusic() {
+
+    let volume = music.volume;
+
+    const fade = setInterval(() => {
+
+      if (volume > 0.01) {
+
+        volume -= targetVolume / 30;
+
+        music.volume = Math.max(volume, 0);
+
+      } else {
+
+        clearInterval(fade);
+
+        music.pause();
+
+      }
+
+    }, 100);
+
+  }
+
+  document.addEventListener("click", () => {
+
+    if (music.paused) {
+
+      fadeInMusic();
+
+      volumeControl.classList.add("show");
+
+      setTimeout(() => {
+
+        volumeControl.classList.remove("show");
+
+      }, 7000);
+
+    }
+
+  }, { once: true });
+
+  document.addEventListener("keydown", (e) => {
+
+    if (e.key.toLowerCase() === "m") {
+
+      if (!music.paused) {
+
+        fadeOutMusic();
+
+      }
+
+    }
+
+  });
+
+}
