@@ -385,3 +385,32 @@ color:#f5f5f5;
 .dark h2{
 color:#DCCAF4;
 }
+
+#volumeControl{
+position:fixed;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+background:rgba(255,255,255,.9);
+backdrop-filter:blur(10px);
+padding:10px 15px;
+border-radius:999px;
+display:flex;
+align-items:center;
+gap:10px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+opacity:0;
+visibility:hidden;
+transition:.4s;
+z-index:9999;
+}
+
+#volumeControl.show{
+opacity:1;
+visibility:visible;
+}
+
+#volumeSlider{
+width:120px;
+cursor:pointer;
+}
